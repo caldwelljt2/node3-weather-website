@@ -1,4 +1,4 @@
-console.log('client side javasript is loadedededed') 
+// console.log('client side javasript is loadedededed') 
 
 
 //fetch('http://puzzle.mead.io/puzzle').then((response) =>{
