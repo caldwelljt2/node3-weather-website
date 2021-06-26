@@ -13,9 +13,11 @@ const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 const messageOne = document.querySelector('#message-1')
 const messageTwo = document.querySelector('#message-2')
+const iconOne = document.querySelector('#icon-1')
 
 messageOne.textContent = ''
 messageTwo.textContent = 'Enter a location above to get the forcast for that location!'
+
 
 weatherForm.addEventListener('submit', (event) => {
     event.preventDefault()
@@ -27,8 +29,10 @@ weatherForm.addEventListener('submit', (event) => {
             messageOne.textContent = 'Here is your forcast:'
             if (data.error) {
                 messageTwo.textContent = data.error
+                iconOne.src = '/img/tiny.gif'
             } else {
                 messageTwo.textContent = data.location + ' ' + data.forcast
+                iconOne.src = data.weather_icon
                 // console.log(data)
             }
         })
