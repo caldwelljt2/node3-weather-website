@@ -11,6 +11,7 @@ const getWeather = require('./utils/getWeather')
 // console.log(path.join(__dirname, "../public"))
 
 const app = express()
+const port = process.env.PORT || 3001
 
 // Define paths for Express config
 const pubPath = path.join(__dirname, "../public")
@@ -112,8 +113,8 @@ app.use((req, res, next) => {
     res.status(404).render('404', { title: 'Error 404: Page Not Found' });
   });
 
-app.listen('3001', () => {
-    console.log('Server is up on port 3001')
+app.listen(port, () => {
+    console.log('Server is up on port: ' + port)
 })
 
 

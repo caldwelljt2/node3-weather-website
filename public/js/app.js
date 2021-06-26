@@ -7,7 +7,7 @@
 //     })
 // })
 
-
+ 
 
 const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
@@ -22,7 +22,7 @@ weatherForm.addEventListener('submit', (event) => {
     messageOne.textContent = 'Loading....'
     messageTwo.textContent = ''
     const location = search.value
-    fetch('http://127.0.0.1:3001/weather?address='+location).then((response) =>{
+    fetch('/weather?address=' + location).then((response) =>{
         response.json().then((data) => {
             messageOne.textContent = 'Here is your forcast:'
             if (data.error) {
