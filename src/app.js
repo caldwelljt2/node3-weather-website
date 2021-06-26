@@ -83,7 +83,7 @@ app.get('/weather', (req, res) => {
         return res.send({error})
     } else {
         getWeather(lat, lon, (error, weatherData, weather_icon) => {
-            console.log(req.query)
+            // console.log(req.query)
             if (error) {
                 return res.send({error:error})
             } else {
